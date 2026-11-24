@@ -37,7 +37,7 @@ RUN chown nextjs:bun .next
 
 COPY --from=builder --chown=nextjs:bun /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:bun /app/.next/static ./.next/static
-
+COPY --from=builder --chown=nextjs:bun /app/public ./public
 USER nextjs
 EXPOSE 3000
 
